@@ -20,7 +20,7 @@
             </p>
         @else
             <p>
-                Good job!<br>
+                Postcode identified!<br>
                 Result count for the provided postcode without filtering: {{ $data['resultCount'] }}<br>
                 @if($data['resultData'])
                     See the top filtered results below (limited to {{ $data['resultDataLimit'] }})
@@ -57,7 +57,7 @@
 
             <div class="form-group">
                 <label>Radius</label>
-                <input type="number" class="form-control" min="0" max="15"
+                <input type="number" class="form-control" min="0" max="15" step="any"
                        name="radius" id="radius" value="{{old('radius', $radius)}}"
                 >
             </div>
@@ -72,7 +72,8 @@
             <div class="form-group">
                 <label for="propertyType">Property type</label>
                 <select class="form-control" name="propertyType" id="propertyType">
-                    <option>Any</option>
+                    <option @if($propertyType == 'ANY') selected @endif value="ANY">
+                        Any</option>
                     <option @if($propertyType == 'DETACHED') selected @endif value="DETACHED">
                         Detached</option>
                     <option @if($propertyType == 'FLAT') selected @endif value="FLAT">
@@ -89,7 +90,8 @@
             <div class="form-group">
                 <label for="tenure">Tenure</label>
                 <select class="form-control" name="tenure" id="tenure">
-                    <option>Any</option>
+                    <option @if($propertyType == 'ANY') selected @endif value="ANY">
+                        Any</option>
                     <option @if($tenure == 'FREEHOLD') selected @endif value="FREEHOLD">
                         Freehold</option>
                     <option @if($tenure == 'LEASEHOLD') selected @endif value="LEASEHOLD">

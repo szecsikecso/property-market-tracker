@@ -26,7 +26,7 @@ class UkPostcode implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
         return preg_match(self::validRegex, $value);
     }
@@ -36,7 +36,7 @@ class UkPostcode implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return 'The :attribute field must be filled with a valid UK postcode.';
     }

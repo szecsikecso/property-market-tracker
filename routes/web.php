@@ -13,5 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
-Route::post('/', [\App\Http\Controllers\HomeController::class, 'processPostcode']);
+/*
+Route::get('/', [
+    'as' => 'index', 'uses' => 'App\Http\Controllers\HomeController@index',
+]);
+*/
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home.index');
+Route::post('/', [App\Http\Controllers\HomeController::class, 'process'])
+    ->name('home.process');
