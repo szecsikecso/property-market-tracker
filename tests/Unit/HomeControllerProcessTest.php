@@ -70,7 +70,6 @@ class HomeControllerProcessTest extends ActionTestCase
         $this->callRouteAction([
             'postcode' => 'EC1A 1BB'
         ])
-            //->assertSeeText('asd')
             ->assertSeeText('Property Market Tracker')
             ->assertSeeText('Postcode identified!')
             ->assertSeeText('Result count for the provided postcode without filtering: 0')

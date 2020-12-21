@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-
-
 trait ReflectionFeature
 {
 

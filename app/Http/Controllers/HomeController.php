@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Rules\UkPostcode;
@@ -9,7 +8,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
